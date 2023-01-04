@@ -1,0 +1,21 @@
+<div class="info-control" id="custom">
+  <mat-grid-list
+    cols='5'
+    >
+    <mat-grid-tile>
+      <i class="material-icons icon" >description</i>
+    </mat-grid-tile>
+    <mat-grid-tile colspan='4'>
+      <textarea class="info-text" CdkTextareaAutosize disabled>{{currentLocation.name}}</textarea>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <i class="material-icons icon">my_location</i>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2">
+      <span  *ngIf="currentLocation.latlng">{{currentLocation.latlng.lat | number: '1.0-1'}} N </span>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="2">
+      <span *ngIf="currentLocation.latlng">{{currentLocation.latlng.lng | number: '1.0-1'}} E </span>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
